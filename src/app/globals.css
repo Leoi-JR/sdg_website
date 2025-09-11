@@ -37,3 +37,30 @@ body {
   background-color: #00d4ff;
   color: #0a0a0f;
 }
+
+/* React PDF 样式 */
+.react-pdf__Page {
+  margin: 0 auto;
+  display: block;
+}
+
+.react-pdf__Page__canvas {
+  display: block;
+  margin: 0 auto;
+}
+
+.react-pdf__Page__textContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: transparent;
+  font-size: 1px;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.react-pdf__Page__annotations {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

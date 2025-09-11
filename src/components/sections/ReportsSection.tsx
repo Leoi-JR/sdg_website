@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import ScrollAnimation from '../animations/ScrollAnimation';
 import Card from '../ui/Card';
 import Button from '../ui/Button';
@@ -10,6 +11,7 @@ import Modal from '../ui/Modal';
 const reports = [
   {
     id: 1,
+    routeId: 'shenzhen-sdg', // 用于路由的ID
     title: '深圳SDG实践报告',
     description: '展示深圳市在可持续发展目标实践中的创新举措、成功案例和经验总结，为其他城市提供借鉴。',
     pdfUrl: 'https://urbansdg.gz.bcebos.com/static/SZSDGs.pdf',
@@ -20,6 +22,7 @@ const reports = [
   },
   {
     id: 2,
+    routeId: 'city-sdg', // 用于路由的ID
     title: '城市SDG发展报告',
     description: '深入分析城市可持续发展目标的实施现状、挑战与机遇，为城市规划者和政策制定者提供专业指导。',
     pdfUrl: 'https://urbansdg.gz.bcebos.com/static/CitySDGs.pdf',
@@ -55,24 +58,16 @@ const videos = [
 ];
 
 const ReportsSection: React.FC = () => {
+  const router = useRouter();
+
   // 视频模态框状态
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState('');
   const [currentVideoTitle, setCurrentVideoTitle] = useState('');
-  // PDF预览处理函数
-  const handlePdfPreview = (pdfUrl: string, title: string) => {
-    try {
-      // 在新标签页中打开PDF
-      const newWindow = window.open(pdfUrl, '_blank', 'noopener,noreferrer');
 
-      // 检查是否成功打开新窗口（防止弹窗拦截）
-      if (!newWindow) {
-        alert('请允许弹窗以预览PDF报告，或者您可以直接访问链接：' + pdfUrl);
-      }
-    } catch (error) {
-      console.error('打开PDF时出错:', error);
-      alert('无法打开PDF预览，请稍后重试');
-    }
+  // PDF预览处理函数 - 跳转到内部PDF查看器页面
+  const handlePdfPreview = (routeId: string) => {
+    router.push(`/pdf/${routeId}`);
   };
 
   // 视频播放处理函数
@@ -108,7 +103,7 @@ const ReportsSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {reports.map((report, index) => (
             <ScrollAnimation key={report.id} delay={0.2 + index * 0.2}>
-              <Card className="group cursor-pointer" onClick={() => handlePdfPreview(report.pdfUrl, report.title)}>
+              <Card className="group cursor-pointer" onClick={() => handlePdfPreview(report.routeId)}>
                 {/* 报告缩略图 */}
                 <div className={`h-48 bg-gradient-to-br ${report.gradientFrom} ${report.gradientTo} rounded-lg mb-4 flex items-center justify-center relative overflow-hidden group-hover:scale-105 transition-transform duration-300`}>
                   {/* 这里将来可以替换为实际的报告封面图片 */}
@@ -153,24 +148,10 @@ const ReportsSection: React.FC = () => {
                     size="sm"
                     onClick={(e?: React.MouseEvent<HTMLButtonElement>) => {
                       e?.stopPropagation();
-                      handlePdfPreview(report.pdfUrl, report.title);
+                      handlePdfPreview(report.routeId);
                     }}
                   >
                     在线预览
-                  </Button>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={(e?: React.MouseEvent<HTMLButtonElement>) => {
-                      e?.stopPropagation();
-                      // 直接下载PDF
-                      const link = document.createElement('a');
-                      link.href = report.pdfUrl;
-                      link.download = `${report.title}.pdf`;
-                      link.click();
-                    }}
-                  >
-                    下载PDF
                   </Button>
                 </div>
               </Card>

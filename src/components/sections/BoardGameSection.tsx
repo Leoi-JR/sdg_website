@@ -29,7 +29,7 @@ const BoardGameSection: React.FC = () => {
               style={{ backgroundImage: "url('/images/games/SDGsGame.png')" }}
             >
               {/* 毛玻璃效果遮罩层 */}
-              <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+              <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
 
               {/* 内容区域 */}
               <div className="relative z-10 text-center p-8">
@@ -40,24 +40,24 @@ const BoardGameSection: React.FC = () => {
                 </p>
               
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                  <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-center bg-black/20 backdrop-blur-[2px] rounded-lg p-4">
                     <div className="text-[#00d4ff] text-xl mb-2">🎯</div>
                     <h4 className="font-semibold mb-1 text-white drop-shadow-md">教育性</h4>
                     <p className="text-sm text-gray-200 drop-shadow-sm">深度学习SDG知识</p>
                   </div>
-                  <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-center bg-black/20 backdrop-blur-[2px] rounded-lg p-4">
                     <div className="text-[#00ff88] text-xl mb-2">🎮</div>
                     <h4 className="font-semibold mb-1 text-white drop-shadow-md">趣味性</h4>
                     <p className="text-sm text-gray-200 drop-shadow-sm">游戏化学习体验</p>
                   </div>
-                  <div className="text-center bg-black/20 backdrop-blur-sm rounded-lg p-4">
+                  <div className="text-center bg-black/20 backdrop-blur-[2px] rounded-lg p-4">
                     <div className="text-[#00d4ff] text-xl mb-2">👥</div>
                     <h4 className="font-semibold mb-1 text-white drop-shadow-md">互动性</h4>
                     <p className="text-sm text-gray-200 drop-shadow-sm">多人协作游戏</p>
                   </div>
                 </div>
 
-                <div className="bg-black/30 backdrop-blur-sm rounded-lg p-6 mb-6 border border-white/10">
+                <div className="bg-black/30 backdrop-blur-[2px] rounded-lg p-6 mb-6 border border-white/10">
                   <h4 className="text-lg font-semibold mb-2 text-[#00d4ff] drop-shadow-md">即将发布</h4>
                   <p className="text-gray-100 text-sm drop-shadow-sm">
                     敬请期待我们的SDG主题桌游，预计2026年春季正式发布
