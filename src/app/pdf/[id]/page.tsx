@@ -8,7 +8,7 @@ const pdfData = {
     id: 1,
     title: '深圳SDG实践报告',
     description: '展示深圳市在可持续发展目标实践中的创新举措、成功案例和经验总结，为其他城市提供借鉴。',
-    pdfUrl: 'https://pub-abdfc2e3309449f5a5cd3ecd63fcc16b.r2.dev/SZSDGs.pdf',
+    pdfUrl: 'https://data.jusike.top/SZSDGs.pdf',
     gradientFrom: 'from-[#00ff88]/20',
     gradientTo: 'to-[#00d4ff]/20'
   },
@@ -16,7 +16,7 @@ const pdfData = {
     id: 2,
     title: '城市SDG发展报告',
     description: '深入分析城市可持续发展目标的实施现状、挑战与机遇，为城市规划者和政策制定者提供专业指导。',
-    pdfUrl: 'https://pub-abdfc2e3309449f5a5cd3ecd63fcc16b.r2.dev/CitySDGs.pdf',
+    pdfUrl: 'https://data.jusike.top/CitySDGs.pdf',
     gradientFrom: 'from-[#00d4ff]/20',
     gradientTo: 'to-[#00ff88]/20'
   }
