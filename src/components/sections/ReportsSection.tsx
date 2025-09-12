@@ -14,7 +14,7 @@ const reports = [
     routeId: 'shenzhen-sdg', // 用于路由的ID
     title: '深圳SDG实践报告',
     description: '展示深圳市在可持续发展目标实践中的创新举措、成功案例和经验总结，为其他城市提供借鉴。',
-    pdfUrl: 'https://urbansdg.gz.bcebos.com/static/SZSDGs.pdf',
+    pdfUrl: 'https://pub-abdfc2e3309449f5a5cd3ecd63fcc16b.r2.dev/SZSDGs.pdf',
     // 占位符图片路径 - 实际使用时需要替换为真实图片
     thumbnailPath: '/images/reports/shenzhen-sdg-thumbnail.jpg',
     gradientFrom: 'from-[#00ff88]/20',
@@ -25,7 +25,7 @@ const reports = [
     routeId: 'city-sdg', // 用于路由的ID
     title: '城市SDG发展报告',
     description: '深入分析城市可持续发展目标的实施现状、挑战与机遇，为城市规划者和政策制定者提供专业指导。',
-    pdfUrl: 'https://urbansdg.gz.bcebos.com/static/CitySDGs.pdf',
+    pdfUrl: 'https://pub-abdfc2e3309449f5a5cd3ecd63fcc16b.r2.dev/CitySDGs.pdf',
     // 占位符图片路径 - 实际使用时需要替换为真实图片
     thumbnailPath: '/images/reports/city-sdg-thumbnail.jpg',
     gradientFrom: 'from-[#00d4ff]/20',
