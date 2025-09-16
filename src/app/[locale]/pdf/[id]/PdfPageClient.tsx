@@ -3,6 +3,7 @@
 import React from 'react';
 import Header from '@/components/layout/Header';
 import PdfViewer from '@/components/ui/PdfViewer';
+import { useTranslations } from '@/components/providers/IntlProvider';
 
 interface Report {
   id: number;
@@ -18,6 +19,8 @@ interface PdfPageClientProps {
 }
 
 const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
+  const t = useTranslations('pdf');
+
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
       {/* 导航栏 */}
@@ -42,16 +45,16 @@ const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
                   className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg transition-colors duration-200 flex items-center gap-2"
                 >
                   <span>←</span>
-                  返回
+                  {t('backToReports')}
                 </button>
-                
+
                 <a
                   href={report.pdfUrl}
                   download={`${report.title}.pdf`}
                   className="px-4 py-2 bg-gradient-to-r from-[#00d4ff] to-[#00ff88] text-black font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 flex items-center gap-2"
                 >
                   <span>⬇</span>
-                  下载PDF
+                  {t('downloadPdf')}
                 </a>
               </div>
             </div>

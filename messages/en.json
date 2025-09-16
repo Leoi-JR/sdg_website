@@ -1,0 +1,117 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Retry",
+    "close": "Close"
+  },
+  "navigation": {
+    "reports": "SDG Reports",
+    "miniprogram": "Mini Program",
+    "boardgame": "Board Game",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Sustainable Development",
+    "subtitle": "Innovation Path",
+    "description": "Explore innovative practices of Sustainable Development Goals through diverse approaches including reports, mini programs, and board games to promote harmonious development of social progress and environmental protection.",
+    "exploreReports": "Explore Reports",
+    "learnMore": "Learn More",
+    "viewReports": "View Reports",
+    "contactUs": "Contact Us"
+  },
+  "reports": {
+    "title": "SDG Reports",
+    "description": "In-depth research on Sustainable Development Goals, providing professional analysis reports and practical guidance",
+    "onlinePreview": "Online Preview",
+    "playVideo": "Play Video",
+    "videosTitle": "Related Videos",
+    "videosDescription": "Get a more intuitive understanding of the core content and practical cases of SDG reports through videos",
+    "shenzhenReport": {
+      "title": "Shenzhen SDG Practice Report",
+      "description": "Showcasing innovative initiatives, success stories, and experience summaries of Shenzhen in the practice of Sustainable Development Goals, providing reference for other cities."
+    },
+    "cityReport": {
+      "title": "Urban SDG Development Report",
+      "description": "In-depth analysis of the implementation status, challenges and opportunities of urban sustainable development goals, providing professional guidance for urban planners and policy makers."
+    },
+    "shenzhenVideo": {
+      "title": "Shenzhen SDG Practice Report - Video Introduction",
+      "description": "Gain in-depth understanding of Shenzhen's innovative initiatives and successful experiences in the practice of Sustainable Development Goals through video."
+    },
+    "cityVideo": {
+      "title": "Urban SDG Development Report - Video Introduction",
+      "description": "Video interpretation of the implementation status, challenges faced, and future development opportunities of urban sustainable development goals."
+    }
+  },
+  "miniprogram": {
+    "title": "WeChat Mini Program",
+    "description": "User mood sharing platform with text and image sharing features",
+    "appTitle": "Mood Sharing Mini Program",
+    "appDescription": "A warm mood sharing platform that allows users to record and share daily mood states, supports text descriptions and image uploads, and builds a positive social environment.",
+    "features": {
+      "textSharing": "Text Mood Sharing",
+      "imageUpload": "Image Upload Feature",
+      "socialInteraction": "Social Interaction Experience"
+    },
+    "qrCodeAlt": "Mood Sharing Mini Program QR Code",
+    "qrCodePlaceholder": "Mini Program QR Code"
+  },
+  "boardgame": {
+    "title": "SDG Board Game",
+    "description": "Upcoming SDG-themed board game for educational and entertaining sustainable development learning experience",
+    "gameTitle": "SDG Learning Board Game",
+    "gameDescription": "Learn Sustainable Development Goals through gamification, making complex concepts vivid and interesting. Suitable for school education, corporate training, and family entertainment.",
+    "features": {
+      "educational": "Educational",
+      "educationalDesc": "In-depth SDG Knowledge Learning",
+      "entertaining": "Entertaining",
+      "entertainingDesc": "Gamified Learning Experience",
+      "interactive": "Interactive",
+      "interactiveDesc": "Multiplayer Collaborative Game"
+    },
+    "comingSoon": "Coming Soon",
+    "releaseInfo": "Stay tuned for our SDG-themed board game, expected to be officially released in Spring 2026",
+    "preorderNotify": "Pre-order Notification"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Looking forward to cooperating with you to jointly promote the realization of Sustainable Development Goals",
+    "teamInfo": "Team Information",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "addressValue": "China · Shenzhen",
+    "followUs": "Follow Us",
+    "wechat": "WeChat",
+    "weibo": "Weibo",
+    "cooperation": "Cooperation Inquiry",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Please enter your name",
+      "email": "Email",
+      "emailPlaceholder": "Please enter your email",
+      "message": "Message",
+      "messagePlaceholder": "Please describe your cooperation requirements...",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "brandTitle": "SDG Team",
+    "brandDescription": "Dedicated to the research and practice of Sustainable Development Goals, promoting social progress through innovative approaches.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Information",
+    "email": "Email",
+    "copyright": "© 2025 SDG Team. All rights reserved.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service"
+  },
+  "pdf": {
+    "loadingError": "PDF file failed to load, please try again later",
+    "loadFailed": "PDF Load Failed",
+    "openInNewWindow": "Open PDF in New Window",
+    "loading": "Loading PDF...",
+    "backToReports": "Back",
+    "downloadPdf": "Download PDF"
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "common": {
+    "loading": "加载中...",
+    "error": "出错了",
+    "retry": "重试",
+    "close": "关闭"
+  },
+  "navigation": {
+    "reports": "SDG报告",
+    "miniprogram": "小程序",
+    "boardgame": "桌游",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "可持续发展",
+    "subtitle": "创新之路",
+    "description": "探索可持续发展目标的创新实践，通过报告、小程序和桌游等多元化方式，推动社会进步与环境保护的和谐发展。",
+    "exploreReports": "探索报告",
+    "learnMore": "了解更多",
+    "viewReports": "查看报告",
+    "contactUs": "联系我们"
+  },
+  "reports": {
+    "title": "SDG报告",
+    "description": "深入研究可持续发展目标，提供专业的分析报告和实践指导",
+    "onlinePreview": "在线预览",
+    "playVideo": "播放视频",
+    "videosTitle": "相关视频",
+    "videosDescription": "通过视频更直观地了解SDG报告的核心内容和实践案例",
+    "shenzhenReport": {
+      "title": "深圳SDG实践报告",
+      "description": "展示深圳市在可持续发展目标实践中的创新举措、成功案例和经验总结，为其他城市提供借鉴。"
+    },
+    "cityReport": {
+      "title": "城市SDG发展报告",
+      "description": "深入分析城市可持续发展目标的实施现状、挑战与机遇，为城市规划者和政策制定者提供专业指导。"
+    },
+    "shenzhenVideo": {
+      "title": "深圳SDG实践报告 - 视频介绍",
+      "description": "通过视频深入了解深圳市在可持续发展目标实践中的创新举措和成功经验。"
+    },
+    "cityVideo": {
+      "title": "城市SDG发展报告 - 视频介绍",
+      "description": "视频解读城市可持续发展目标的实施现状、面临挑战以及未来发展机遇。"
+    }
+  },
+  "miniprogram": {
+    "title": "微信小程序",
+    "description": "用户心情分享平台，支持文本和图片分享功能",
+    "appTitle": "心情分享小程序",
+    "appDescription": "一个温暖的心情分享平台，让用户可以记录和分享日常的心情状态，支持文字描述和图片上传，构建积极的社交环境。",
+    "features": {
+      "textSharing": "文本心情分享",
+      "imageUpload": "图片上传功能",
+      "socialInteraction": "社交互动体验"
+    },
+    "qrCodeAlt": "心情分享小程序二维码",
+    "qrCodePlaceholder": "小程序二维码"
+  },
+  "boardgame": {
+    "title": "SDG桌游",
+    "description": "即将发布的SDG主题桌游，寓教于乐的可持续发展学习体验",
+    "gameTitle": "SDG学习桌游",
+    "gameDescription": "通过游戏化的方式学习可持续发展目标，让复杂的概念变得生动有趣。适合学校教育、企业培训和家庭娱乐。",
+    "features": {
+      "educational": "教育性",
+      "educationalDesc": "深度学习SDG知识",
+      "entertaining": "趣味性",
+      "entertainingDesc": "游戏化学习体验",
+      "interactive": "互动性",
+      "interactiveDesc": "多人协作游戏"
+    },
+    "comingSoon": "即将发布",
+    "releaseInfo": "敬请期待我们的SDG主题桌游，预计2026年春季正式发布",
+    "preorderNotify": "预约通知"
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "期待与您合作，共同推进可持续发展目标的实现",
+    "teamInfo": "团队信息",
+    "email": "邮箱",
+    "phone": "电话",
+    "address": "地址",
+    "addressValue": "中国 · 深圳市",
+    "followUs": "关注我们",
+    "wechat": "微信",
+    "weibo": "微博",
+    "cooperation": "合作咨询",
+    "form": {
+      "name": "姓名",
+      "namePlaceholder": "请输入您的姓名",
+      "email": "邮箱",
+      "emailPlaceholder": "请输入您的邮箱",
+      "message": "消息",
+      "messagePlaceholder": "请描述您的合作需求...",
+      "submit": "发送消息"
+    }
+  },
+  "footer": {
+    "brandTitle": "SDG团队",
+    "brandDescription": "致力于可持续发展目标的研究与实践，通过创新的方式推动社会进步。",
+    "quickLinks": "快速链接",
+    "contactInfo": "联系信息",
+    "email": "邮箱",
+    "copyright": "© 2025 SDG团队. 保留所有权利.",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "使用条款"
+  },
+  "pdf": {
+    "loadingError": "PDF文件加载失败，请稍后重试",
+    "loadFailed": "PDF加载失败",
+    "openInNewWindow": "在新窗口中打开PDF",
+    "loading": "正在加载PDF...",
+    "backToReports": "返回",
+    "downloadPdf": "下载PDF"
+  }
+}

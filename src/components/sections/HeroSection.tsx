@@ -2,10 +2,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from '@/components/providers/IntlProvider';
 import FadeIn from '../animations/FadeIn';
 import Button from '../ui/Button';
 
 const HeroSection: React.FC = () => {
+  const t = useTranslations('hero');
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Gradient */}
@@ -44,26 +46,26 @@ const HeroSection: React.FC = () => {
         <FadeIn delay={0.2}>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold mb-6">
             <span className="bg-gradient-to-r from-[#00d4ff] to-[#00ff88] bg-clip-text text-transparent">
-              可持续发展
+              {t('title')}
             </span>
             <br />
-            <span className="text-white">创新之路</span>
+            <span className="text-white">{t('subtitle')}</span>
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.4}>
           <p className="text-xl sm:text-2xl text-gray-300 mb-8 leading-relaxed">
-            探索SDG目标的实现路径，通过科技创新推动社会进步
+            {t('description')}
           </p>
         </FadeIn>
 
         <FadeIn delay={0.6}>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <Button size="lg" onClick={() => document.querySelector('#reports')?.scrollIntoView({ behavior: 'smooth' })}>
-              查看报告
+              {t('viewReports')}
             </Button>
             <Button variant="outline" size="lg" onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}>
-              联系我们
+              {t('contactUs')}
             </Button>
           </div>
         </FadeIn>

@@ -13,16 +13,11 @@ export const viewport = {
   initialScale: 1,
 };
 
+// 这个布局只是一个包装器，实际的国际化布局在 [locale]/layout.tsx 中
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="zh-CN">
-      <body className="antialiased">
-        {children}
-      </body>
-    </html>
-  );
+  return children;
 }

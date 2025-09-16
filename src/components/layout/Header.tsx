@@ -2,22 +2,40 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useRouter, usePathname } from 'next/navigation';
+import { useTranslations } from '@/components/providers/IntlProvider';
+import LanguageSwitcher from '../ui/LanguageSwitcher';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
+  const t = useTranslations('navigation');
 
   const navItems = [
-    { name: 'SDG报告', href: '#reports' },
-    { name: '小程序', href: '#miniprogram' },
-    { name: '桌游', href: '#boardgame' },
-    { name: '联系我们', href: '#contact' },
+    { name: t('reports'), href: '#reports' },
+    { name: t('miniprogram'), href: '#miniprogram' },
+    { name: t('boardgame'), href: '#boardgame' },
+    { name: t('contact'), href: '#contact' },
   ];
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    // 检测当前是否在首页
+    const isHomePage = pathname === '/zh' || pathname === '/en' || pathname === '/';
+
+    if (isHomePage) {
+      // 在首页，直接滚动到对应部分
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // 不在首页，先跳转到首页再滚动到对应部分
+      const locale = pathname.startsWith('/zh') ? 'zh' : 'en';
+      const homeUrl = `/${locale}${href}`;
+      router.push(homeUrl);
     }
+
     setIsMenuOpen(false);
   };
 
@@ -38,22 +56,28 @@ const Header: React.FC = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:text-[#00d4ff] px-3 py-2 text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </button>
-              ))}
-            </div>
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            <nav>
+              <div className="flex items-baseline space-x-8">
+                {navItems.map((item) => (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className="text-gray-300 hover:text-[#00d4ff] px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  >
+                    {item.name}
+                  </button>
+                ))}
+              </div>
+            </nav>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+            {/* Language Switcher */}
+            <LanguageSwitcher />
+          </div>
+
+          {/* Mobile menu button and language switcher */}
+          <div className="md:hidden flex items-center space-x-3">
+            <LanguageSwitcher />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-400 hover:text-white focus:outline-none focus:text-white"
