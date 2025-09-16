@@ -24,7 +24,7 @@ interface LocaleLayoutProps {
 async function getMessages(locale: Locale) {
   try {
     return (await import(`../../../messages/${locale}.json`)).default;
-  } catch (error) {
+  } catch {
     throw new Error(`Failed to load messages for locale: ${locale}`);
   }
 }
@@ -36,7 +36,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // 验证语言参数
-  if (!locales.includes(locale as any)) {
+  if (!locales.includes(locale as Locale)) {
     notFound();
   }
 
@@ -46,7 +46,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <body className="antialiased">
-        <IntlProvider messages={messages} locale={locale}>
+        <IntlProvider messages={messages} locale={locale as Locale}>
           <div className="text-sm text-gray-500 p-2">Current locale: {locale}</div>
           {children}
         </IntlProvider>

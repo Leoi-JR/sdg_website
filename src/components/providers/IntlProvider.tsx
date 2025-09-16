@@ -5,7 +5,7 @@ import { type Locale } from '@/i18n';
 
 interface IntlContextType {
   locale: Locale;
-  messages: Record<string, any>;
+  messages: Record<string, unknown>;
   t: (key: string) => string;
 }
 
@@ -14,22 +14,22 @@ const IntlContext = createContext<IntlContextType | null>(null);
 interface IntlProviderProps {
   children: React.ReactNode;
   locale: Locale;
-  messages: Record<string, any>;
+  messages: Record<string, unknown>;
 }
 
 export function IntlProvider({ children, locale, messages }: IntlProviderProps) {
   const t = (key: string): string => {
     const keys = key.split('.');
-    let value = messages;
-    
+    let value: unknown = messages;
+
     for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = value[k];
+      if (value && typeof value === 'object' && value !== null && k in value) {
+        value = (value as Record<string, unknown>)[k];
       } else {
         return key; // 返回原始键作为后备
       }
     }
-    
+
     return typeof value === 'string' ? value : key;
   };
 

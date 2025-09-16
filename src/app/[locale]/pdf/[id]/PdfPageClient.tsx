@@ -4,15 +4,7 @@ import React from 'react';
 import Header from '@/components/layout/Header';
 import PdfViewer from '@/components/ui/PdfViewer';
 import { useTranslations } from '@/components/providers/IntlProvider';
-
-interface Report {
-  id: number;
-  title: string;
-  description: string;
-  pdfUrl: string;
-  gradientFrom: string;
-  gradientTo: string;
-}
+import { Report } from '@/data/types';
 
 interface PdfPageClientProps {
   report: Report;
@@ -20,6 +12,7 @@ interface PdfPageClientProps {
 
 const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
   const t = useTranslations('pdf');
+  const tGlobal = useTranslations(); // 用于访问全局翻译键
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
@@ -34,7 +27,7 @@ const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
             <div className="flex items-center justify-between mb-4">
               <h1 className="text-3xl sm:text-4xl font-bold">
                 <span className="bg-gradient-to-r from-[#00d4ff] to-[#00ff88] bg-clip-text text-transparent">
-                  {report.title}
+                  {tGlobal(report.titleKey)}
                 </span>
               </h1>
               
@@ -50,7 +43,7 @@ const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
 
                 <a
                   href={report.pdfUrl}
-                  download={`${report.title}.pdf`}
+                  download={`${tGlobal(report.titleKey)}.pdf`}
                   className="px-4 py-2 bg-gradient-to-r from-[#00d4ff] to-[#00ff88] text-black font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 flex items-center gap-2"
                 >
                   <span>⬇</span>
@@ -60,15 +53,15 @@ const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
             </div>
             
             <p className="text-gray-300 text-lg max-w-4xl">
-              {report.description}
+              {tGlobal(report.descriptionKey)}
             </p>
           </div>
 
           {/* PDF查看器 */}
           <div className="bg-[#1a1a1f] rounded-xl p-6 shadow-2xl">
-            <PdfViewer 
-              pdfUrl={report.pdfUrl} 
-              title={report.title}
+            <PdfViewer
+              pdfUrl={report.pdfUrl}
+              title={tGlobal(report.titleKey)}
             />
           </div>
         </div>

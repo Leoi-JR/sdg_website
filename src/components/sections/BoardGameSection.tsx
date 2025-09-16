@@ -4,7 +4,7 @@ import React from 'react';
 import { useTranslations } from '@/components/providers/IntlProvider';
 import ScrollAnimation from '../animations/ScrollAnimation';
 import Card from '../ui/Card';
-import Button from '../ui/Button';
+
 
 const BoardGameSection: React.FC = () => {
   const t = useTranslations('boardgame');

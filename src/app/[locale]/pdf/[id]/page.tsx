@@ -40,8 +40,9 @@ export async function generateMetadata({ params }: PdfPageProps) {
     };
   }
 
+  // 简化的元数据，使用翻译键作为后备
   return {
-    title: `${report.title} | SDG宣传展示网站`,
-    description: report.description,
+    title: `${report.titleKey} | SDG宣传展示网站`,
+    description: report.descriptionKey,
   };
 }

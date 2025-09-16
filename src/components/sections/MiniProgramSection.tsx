@@ -47,7 +47,7 @@ const MiniProgramSection: React.FC = () => {
                   {miniProgramData.features.map((feature, index) => (
                     <div key={index} className="flex items-center text-sm text-gray-300">
                       <span className={`w-2 h-2 ${feature.color} rounded-full mr-3`}></span>
-                      {tGlobal(feature.textKey as any)}
+                      {tGlobal(feature.textKey)}
                     </div>
                   ))}
                 </div>

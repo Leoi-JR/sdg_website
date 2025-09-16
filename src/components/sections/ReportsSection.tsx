@@ -34,7 +34,7 @@ const ReportsSection: React.FC = () => {
   // 视频播放处理函数
   const handleVideoPlay = (videoUrl: string, titleKey: string) => {
     setCurrentVideoUrl(videoUrl);
-    setCurrentVideoTitle(tGlobal(titleKey as any));
+    setCurrentVideoTitle(tGlobal(titleKey));
     setIsVideoModalOpen(true);
   };
 
@@ -70,7 +70,7 @@ const ReportsSection: React.FC = () => {
                   {/* 这里将来可以替换为实际的报告封面图片 */}
                   <img
                     src={report.thumbnailPath}
-                    alt={`${tGlobal(report.titleKey as any)}封面`}
+                    alt={`${tGlobal(report.titleKey)}封面`}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       // 图片加载失败时的回退方案
@@ -97,10 +97,10 @@ const ReportsSection: React.FC = () => {
 
                 {/* 报告信息 */}
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-[#00d4ff] transition-colors duration-200">
-                  {tGlobal(report.titleKey as any)}
+                  {tGlobal(report.titleKey)}
                 </h3>
                 <p className="text-gray-400 mb-6 leading-relaxed">
-                  {tGlobal(report.descriptionKey as any)}
+                  {tGlobal(report.descriptionKey)}
                 </p>
 
                 {/* 操作按钮 */}
@@ -144,7 +144,7 @@ const ReportsSection: React.FC = () => {
                   {/* 视频缩略图图片 */}
                   <img
                     src={video.thumbnailPath}
-                    alt={`${tGlobal(video.titleKey as any)}缩略图`}
+                    alt={`${tGlobal(video.titleKey)}缩略图`}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       // 图片加载失败时的回退方案
@@ -179,10 +179,10 @@ const ReportsSection: React.FC = () => {
 
                 {/* 视频信息 */}
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-[#00d4ff] transition-colors duration-200">
-                  {tGlobal(video.titleKey as any)}
+                  {tGlobal(video.titleKey)}
                 </h3>
                 <p className="text-gray-400 mb-6 leading-relaxed">
-                  {tGlobal(video.descriptionKey as any)}
+                  {tGlobal(video.descriptionKey)}
                 </p>
 
                 {/* 播放按钮 */}
