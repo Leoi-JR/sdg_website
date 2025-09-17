@@ -91,9 +91,23 @@
       "namePlaceholder": "请输入您的姓名",
       "email": "邮箱",
       "emailPlaceholder": "请输入您的邮箱",
+      "organization": "机构/学校",
+      "organizationPlaceholder": "请输入您的机构或学校",
+      "position": "职位",
+      "positionPlaceholder": "请输入您的职位",
       "message": "消息",
       "messagePlaceholder": "请描述您的合作需求...",
-      "submit": "发送消息"
+      "submit": "发送消息",
+      "submitting": "发送中...",
+      "nameRequired": "请输入您的姓名",
+      "emailRequired": "请输入您的邮箱",
+      "emailInvalid": "请输入有效的邮箱地址",
+      "organizationRequired": "请输入您的机构或学校",
+      "positionRequired": "请输入您的职位",
+      "messageRequired": "请输入您的消息",
+      "messageTooShort": "消息内容至少需要10个字符",
+      "submitSuccess": "消息发送成功！我们会尽快回复您。",
+      "submitError": "发送失败，请稍后重试。"
     }
   },
   "footer": {

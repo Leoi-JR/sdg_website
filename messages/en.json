@@ -91,9 +91,23 @@
       "namePlaceholder": "Please enter your name",
       "email": "Email",
       "emailPlaceholder": "Please enter your email",
+      "organization": "Organization/School",
+      "organizationPlaceholder": "Please enter your organization or school",
+      "position": "Position",
+      "positionPlaceholder": "Please enter your position",
       "message": "Message",
       "messagePlaceholder": "Please describe your cooperation requirements...",
-      "submit": "Send Message"
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "nameRequired": "Please enter your name",
+      "emailRequired": "Please enter your email",
+      "emailInvalid": "Please enter a valid email address",
+      "organizationRequired": "Please enter your organization or school",
+      "positionRequired": "Please enter your position",
+      "messageRequired": "Please enter your message",
+      "messageTooShort": "Message must be at least 10 characters long",
+      "submitSuccess": "Message sent successfully! We will reply to you as soon as possible.",
+      "submitError": "Failed to send. Please try again later."
     }
   },
   "footer": {

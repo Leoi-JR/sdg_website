@@ -10,6 +10,7 @@ interface ButtonProps {
   onClick?: (event?: React.MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -19,6 +20,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   disabled = false,
   className = '',
+  type = 'button',
 }) => {
   const baseClasses = 'font-medium rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-[#0a0a0f]';
   
@@ -51,6 +53,7 @@ const Button: React.FC<ButtonProps> = ({
       className={combinedClasses}
       onClick={onClick}
       disabled={disabled}
+      type={type}
     >
       {children}
     </motion.button>
