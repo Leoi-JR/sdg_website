@@ -63,7 +63,7 @@ async function sendEmailNotification(formData: ContactFormData) {
   // 邮件内容
   const mailOptions = {
     from: process.env.SMTP_USER,
-    to: process.env.CONTACT_EMAIL || 'contact@jusike.top', // 接收邮件的邮箱
+    to: process.env.CONTACT_EMAIL || 'contact@mofimo.cn', // 接收邮件的邮箱
     subject: '🌍 SDG网站 - 新的联系表单提交',
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">

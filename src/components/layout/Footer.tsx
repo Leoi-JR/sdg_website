@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold text-white">{t('contactInfo')}</h4>
             <div className="space-y-2 text-sm text-gray-400">
-              <p>{t('email')}: contact@jusike.top</p>
+              <p>{t('email')}: contact@mofimo.cn</p>
             </div>
           </div>
         </div>
