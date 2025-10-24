@@ -32,9 +32,26 @@ const ReportsSection: React.FC = () => {
   };
 
   // 视频播放处理函数
-  const handleVideoPlay = (videoUrl: string, titleKey: string) => {
+  const handleVideoPlay = (video: typeof videos[0]) => {
+    // 根据当前语言选择合适的视频源
+    let videoUrl = video.bilibiliUrl;
+    
+    if (locale === 'en') {
+      // 英文环境：优先使用英文MP4，其次英文Bilibili，最后默认Bilibili
+      if (video.mp4UrlEn) {
+        videoUrl = video.mp4UrlEn;
+      } else if (video.bilibiliUrlEn) {
+        videoUrl = video.bilibiliUrlEn;
+      }
+    } else {
+      // 中文环境：优先使用中文MP4，其次默认Bilibili
+      if (video.mp4Url) {
+        videoUrl = video.mp4Url;
+      }
+    }
+    
     setCurrentVideoUrl(videoUrl);
-    setCurrentVideoTitle(tGlobal(titleKey));
+    setCurrentVideoTitle(tGlobal(video.titleKey));
     setIsVideoModalOpen(true);
   };
 
@@ -138,7 +155,7 @@ const ReportsSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {videos.map((video, index) => (
             <ScrollAnimation key={video.id} delay={1.0 + index * 0.2}>
-              <Card className="group cursor-pointer" onClick={() => handleVideoPlay(video.bilibiliUrl, video.titleKey)}>
+              <Card className="group cursor-pointer" onClick={() => handleVideoPlay(video)}>
                 {/* 视频缩略图 */}
                 <div className="h-48 rounded-lg mb-4 relative overflow-hidden group-hover:scale-105 transition-transform duration-300">
                   {/* 视频缩略图图片 */}
@@ -191,7 +208,7 @@ const ReportsSection: React.FC = () => {
                     size="sm"
                     onClick={(e?: React.MouseEvent<HTMLButtonElement>) => {
                       e?.stopPropagation();
-                      handleVideoPlay(video.bilibiliUrl, video.titleKey);
+                      handleVideoPlay(video);
                     }}
                   >
                     {t('playVideo')}
@@ -211,13 +228,27 @@ const ReportsSection: React.FC = () => {
         size="video"
       >
         <div className="w-full bg-black rounded-b-xl" style={{ aspectRatio: '16/9' }}>
-          <iframe
-            src={currentVideoUrl}
-            className="w-full h-full border-0 rounded-b-xl"
-            allowFullScreen
-            title={currentVideoTitle}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          />
+          {currentVideoUrl.endsWith('.mp4') ? (
+            // MP4视频使用video标签
+            <video
+              src={currentVideoUrl}
+              className="w-full h-full border-0 rounded-b-xl"
+              controls
+              autoPlay
+              title={currentVideoTitle}
+            >
+              您的浏览器不支持视频播放。
+            </video>
+          ) : (
+            // Bilibili等嵌入式播放器使用iframe
+            <iframe
+              src={currentVideoUrl}
+              className="w-full h-full border-0 rounded-b-xl"
+              allowFullScreen
+              title={currentVideoTitle}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            />
+          )}
         </div>
       </Modal>
     </section>

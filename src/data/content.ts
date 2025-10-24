@@ -42,6 +42,7 @@ export const contentData: ContentData = {
       titleKey: 'reports.cityVideo.title',
       descriptionKey: 'reports.cityVideo.description',
       bilibiliUrl: '//player.bilibili.com/player.html?isOutside=true&aid=112750793592788&bvid=BV1eeaFeaErX&cid=500001608959623&p=1',
+      mp4UrlEn: 'https://data.mofimo.cn/2024sdg_en.mp4', // 英文版使用MP4视频
       thumbnailPath: '/images/videos/city-sdg-video-thumbnail.jpg',
       gradientFrom: 'from-[#00d4ff]/20',
       gradientTo: 'to-[#00ff88]/20'

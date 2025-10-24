@@ -16,6 +16,9 @@ export interface Video {
   titleKey: string; // 国际化键名
   descriptionKey: string; // 国际化键名
   bilibiliUrl: string;
+  bilibiliUrlEn?: string; // 英文版Bilibili链接（可选）
+  mp4Url?: string; // MP4视频链接（可选）
+  mp4UrlEn?: string; // 英文版MP4视频链接（可选）
   thumbnailPath: string;
   gradientFrom: string;
   gradientTo: string;
