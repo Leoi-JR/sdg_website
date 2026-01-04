@@ -46,7 +46,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale}>
       <head>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="f3486e05-1ae3-4a4b-8149-9d88b2cc4568"></script>
+        <script defer src="http://182.61.56.252:3000/script.js" data-website-id="45b5481e-de7a-4809-acbe-352cb279e641"></script>
       </head>
       <body className="antialiased">
         <IntlProvider messages={messages} locale={locale as Locale}>
