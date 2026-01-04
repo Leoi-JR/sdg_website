@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { locales } from './i18n';
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
   // 检查路径是否已经包含支持的语言前缀
