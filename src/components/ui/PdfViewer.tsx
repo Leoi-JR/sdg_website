@@ -7,17 +7,18 @@ import { trackPdfView } from '@/lib/umami';
 interface PdfViewerProps {
   pdfUrl: string;
   title: string;
+  reportId: string;
 }
 
-const PdfViewer: React.FC<PdfViewerProps> = ({ pdfUrl, title }) => {
+const PdfViewer: React.FC<PdfViewerProps> = ({ pdfUrl, title, reportId }) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const t = useTranslations('pdf');
 
   // 组件加载时跟踪 PDF 阅读事件
   useEffect(() => {
-    trackPdfView(title, pdfUrl, pdfUrl);
-  }, [title, pdfUrl]);
+    trackPdfView(title, reportId, pdfUrl);
+  }, [title, reportId, pdfUrl]);
 
   const handleIframeLoad = () => {
     setLoading(false);

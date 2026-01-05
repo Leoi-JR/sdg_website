@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations } from '@/components/providers/IntlProvider';
 import { usePathname } from 'next/navigation';
@@ -21,10 +21,35 @@ const ReportsSection: React.FC = () => {
   const reports = getReports();
   const videos = getVideos();
 
+  // 报告统计数据状态
+  const [reportStats, setReportStats] = useState<Record<string, { views: number; downloads: number }>>({
+    'shenzhen-sdg': { views: 0, downloads: 0 },
+    'city-sdg': { views: 0, downloads: 0 }
+  });
+  const [statsLoading, setStatsLoading] = useState(true);
+
   // 视频模态框状态
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [currentVideoUrl, setCurrentVideoUrl] = useState('');
   const [currentVideoTitle, setCurrentVideoTitle] = useState('');
+
+  // 获取统计数据
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        setStatsLoading(true);
+        const response = await fetch('/api/stats');
+        const data = await response.json();
+        setReportStats(data);
+      } catch (error) {
+        console.error('Failed to fetch stats:', error);
+      } finally {
+        setStatsLoading(false);
+      }
+    };
+
+    fetchStats();
+  }, []);
 
   // PDF预览处理函数 - 跳转到内部PDF查看器页面
   const handlePdfPreview = (routeId: string) => {
@@ -121,7 +146,7 @@ const ReportsSection: React.FC = () => {
                 </p>
 
                 {/* 操作按钮 */}
-                <div className="flex gap-3">
+                <div className="flex items-center justify-between">
                   <Button
                     size="sm"
                     onClick={(e?: React.MouseEvent<HTMLButtonElement>) => {
@@ -131,6 +156,20 @@ const ReportsSection: React.FC = () => {
                   >
                     {t('onlinePreview')}
                   </Button>
+
+                  {/* 统计信息 */}
+                  <div className="flex items-center gap-4 text-sm text-gray-400">
+                    <div className="flex items-center gap-1">
+                      <span className="text-base">👁️</span>
+                      <span>{statsLoading ? '...' : (reportStats[report.routeId]?.views.toLocaleString() || '0')}</span>
+                      <span className="text-xs">{t('views')}</span>
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <span className="text-base">⬇️</span>
+                      <span>{statsLoading ? '...' : (reportStats[report.routeId]?.downloads.toLocaleString() || '0')}</span>
+                      <span className="text-xs">{t('downloads')}</span>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </ScrollAnimation>

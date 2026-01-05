@@ -70,6 +70,7 @@ const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
             <PdfViewer
               pdfUrl={report.pdfUrl}
               title={tGlobal(report.titleKey)}
+              reportId={report.routeId}
             />
           </div>
         </div>

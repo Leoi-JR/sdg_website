@@ -24,9 +24,10 @@ export const trackEvent = (eventName: string, data?: Record<string, string | num
  * 跟踪 PDF 阅读事件
  */
 export const trackPdfView = (reportTitle: string, reportId: string, url: string) => {
-  trackEvent('pdf-view', {
+  // 为每个报告创建独立的事件名称
+  const eventName = `${reportId}-view`;
+  trackEvent(eventName, {
     reportTitle,
-    reportId,
     url
   });
 };
@@ -35,9 +36,10 @@ export const trackPdfView = (reportTitle: string, reportId: string, url: string)
  * 跟踪 PDF 下载事件
  */
 export const trackPdfDownload = (reportTitle: string, reportId: string, url: string) => {
-  trackEvent('pdf-download', {
+  // 为每个报告创建独立的事件名称
+  const eventName = `${reportId}-download`;
+  trackEvent(eventName, {
     reportTitle,
-    reportId,
     url
   });
 };
