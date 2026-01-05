@@ -9,7 +9,8 @@ export const contentData: ContentData = {
       routeId: 'shenzhen-sdg', // 用于路由的ID
       titleKey: 'reports.shenzhenReport.title',
       descriptionKey: 'reports.shenzhenReport.description',
-      pdfUrl: 'https://data.mofimo.cn/SZSDGs.pdf',
+      pdfUrl: 'https://data.mofimo.cn/reader/SZSDGs.pdf', // 在线预览链接
+      downloadPdfUrl: 'https://data.mofimo.cn/download/SZSDGs.pdf', // 下载链接
       thumbnailPath: '/images/reports/shenzhen-sdg-thumbnail.jpg',
       gradientFrom: 'from-[#00ff88]/20',
       gradientTo: 'to-[#00d4ff]/20'
@@ -19,7 +20,8 @@ export const contentData: ContentData = {
       routeId: 'city-sdg', // 用于路由的ID
       titleKey: 'reports.cityReport.title',
       descriptionKey: 'reports.cityReport.description',
-      pdfUrl: 'https://data.mofimo.cn/CitySDGs.pdf',
+      pdfUrl: 'https://data.mofimo.cn/reader/CitySDGs.pdf', // 在线预览链接
+      downloadPdfUrl: 'https://data.mofimo.cn/download/CitySDGs.pdf', // 下载链接
       thumbnailPath: '/images/reports/city-sdg-thumbnail.jpg',
       gradientFrom: 'from-[#00d4ff]/20',
       gradientTo: 'to-[#00ff88]/20'

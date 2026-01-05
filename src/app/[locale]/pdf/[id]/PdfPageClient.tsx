@@ -42,7 +42,7 @@ const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
                 </button>
 
                 <a
-                  href={report.pdfUrl}
+                  href={report.downloadPdfUrl}
                   download={`${tGlobal(report.titleKey)}.pdf`}
                   className="px-4 py-2 bg-gradient-to-r from-[#00d4ff] to-[#00ff88] text-black font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 flex items-center gap-2"
                 >

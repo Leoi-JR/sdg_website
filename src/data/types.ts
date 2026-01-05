@@ -5,7 +5,8 @@ export interface Report {
   routeId: string; // 用于路由的ID
   titleKey: string; // 国际化键名
   descriptionKey: string; // 国际化键名
-  pdfUrl: string;
+  pdfUrl: string; // 用于在线预览的reader链接
+  downloadPdfUrl: string; // 用于下载的download链接
   thumbnailPath: string;
   gradientFrom: string;
   gradientTo: string;
