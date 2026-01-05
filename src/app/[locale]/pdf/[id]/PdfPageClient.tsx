@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header';
 import PdfViewer from '@/components/ui/PdfViewer';
 import { useTranslations } from '@/components/providers/IntlProvider';
 import { Report } from '@/data/types';
+import { trackPdfDownload } from '@/lib/umami';
 
 interface PdfPageClientProps {
   report: Report;
@@ -13,6 +14,12 @@ interface PdfPageClientProps {
 const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
   const t = useTranslations('pdf');
   const tGlobal = useTranslations(); // 用于访问全局翻译键
+
+  const handleDownload = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // 跟踪 PDF 下载事件
+    trackPdfDownload(tGlobal(report.titleKey), report.routeId, report.downloadPdfUrl);
+    // 允许默认的下载行为继续
+  };
 
   return (
     <div className="min-h-screen bg-[#0a0a0f]">
@@ -44,6 +51,7 @@ const PdfPageClient: React.FC<PdfPageClientProps> = ({ report }) => {
                 <a
                   href={report.downloadPdfUrl}
                   download={`${tGlobal(report.titleKey)}.pdf`}
+                  onClick={handleDownload}
                   className="px-4 py-2 bg-gradient-to-r from-[#00d4ff] to-[#00ff88] text-black font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 flex items-center gap-2"
                 >
                   <span>⬇</span>

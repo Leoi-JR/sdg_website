@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslations } from '@/components/providers/IntlProvider';
+import { trackPdfView } from '@/lib/umami';
 
 interface PdfViewerProps {
   pdfUrl: string;
@@ -12,6 +13,11 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfUrl, title }) => {
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const t = useTranslations('pdf');
+
+  // 组件加载时跟踪 PDF 阅读事件
+  useEffect(() => {
+    trackPdfView(title, pdfUrl, pdfUrl);
+  }, [title, pdfUrl]);
 
   const handleIframeLoad = () => {
     setLoading(false);
