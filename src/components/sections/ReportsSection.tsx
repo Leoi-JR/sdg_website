@@ -9,6 +9,9 @@ import Card from '../ui/Card';
 import Button from '../ui/Button';
 import Modal from '../ui/Modal';
 import { getReports, getVideos } from '@/data/content';
+import ReaderIcon from '../icons/ReaderIcon';
+import DownloadIcon from '../icons/DownloadIcon';
+import PlayIcon from '../icons/PlayIcon';
 
 const ReportsSection: React.FC = () => {
   const router = useRouter();
@@ -131,7 +134,7 @@ const ReportsSection: React.FC = () => {
                   {/* 悬浮时的预览提示 */}
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="text-white text-center">
-                      <div className="text-2xl mb-2">👁️</div>
+                      <ReaderIcon className="w-12 h-12 mx-auto mb-2 text-[#00d4ff]" />
                       <span className="text-sm">{t('onlinePreview')}</span>
                     </div>
                   </div>
@@ -160,12 +163,12 @@ const ReportsSection: React.FC = () => {
                   {/* 统计信息 */}
                   <div className="flex items-center gap-4 text-sm text-gray-400">
                     <div className="flex items-center gap-1">
-                      <span className="text-base">👁️</span>
+                      <ReaderIcon className="w-4 h-4 text-[#00d4ff]" />
                       <span>{statsLoading ? '...' : (reportStats[report.routeId]?.views.toLocaleString() || '0')}</span>
                       <span className="text-xs">{t('views')}</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <span className="text-base">⬇️</span>
+                      <DownloadIcon className="w-4 h-4 text-[#00ff88]" />
                       <span>{statsLoading ? '...' : (reportStats[report.routeId]?.downloads.toLocaleString() || '0')}</span>
                       <span className="text-xs">{t('downloads')}</span>
                     </div>
@@ -226,7 +229,7 @@ const ReportsSection: React.FC = () => {
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <div className="text-white text-center">
                       <div className="w-16 h-16 bg-[#00d4ff]/20 backdrop-blur-sm border-2 border-[#00d4ff] rounded-full flex items-center justify-center mb-2">
-                        <div className="text-2xl">▶️</div>
+                        <PlayIcon className="w-8 h-8 text-[#00d4ff]" />
                       </div>
                       <span className="text-sm">{t('playVideo')}</span>
                     </div>
