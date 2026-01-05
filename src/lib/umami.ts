@@ -9,19 +9,12 @@ declare global {
   }
 }
 
-// 事件数据类型
-export interface UmamiEventData {
-  reportTitle?: string;
-  reportId?: string;
-  url?: string;
-}
-
 /**
  * 发送 Umami 事件
  * @param eventName 事件名称
  * @param data 事件数据
  */
-export const trackEvent = (eventName: string, data?: UmamiEventData) => {
+export const trackEvent = (eventName: string, data?: Record<string, string | number>) => {
   if (typeof window !== 'undefined' && window.umami) {
     window.umami.track(eventName, data);
   }
